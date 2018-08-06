@@ -1,0 +1,16 @@
+1.a.UART修改Efues 
+(1)将8761AT uart_tx /uart_rx /GND 与主机(windows xp/windows 7)的串口uart_rx /uart_tx /GND连接，使用BTEFUSE_Vendor.exe
+(2)右边Device选择1：uart HCIeFuse
+(3)port选择电脑设备管理器认出来的串口号
+(4)选择Device Open 出现进度显示，成功读取之后修改byte09[5]bit为1，然后点击Efuse UpDate
+如图efuse_8761_uart.png
+
+1.b.USB修改Efues 
+(1)将8761AUV通过usb与PC连接，使用BTEFUSE_Vendor.exe
+(2)右边Device选择0:USB  HCI eFuse;Port 0
+(3)选择Device Open 出现进度显示，成功读取System efuse之后修改byte09[5]bit为1，然后点击Efuse UpDate
+如图efuse_8761_usb.png
+
+2. 参考图片fwLog.jpg 将Log pin/GND 拉出来并且接到主机的串口uart_rx/GND
+
+3. 使用RTK Log tool\BTDebugger.exe,参考使用说明录fw log
